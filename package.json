@@ -21,7 +21,7 @@
         "doc": "esdoc -c esdoc.json",
         "db:seed": "node -r @std/esm db/seed.js",
         "deploy": "now -e LETTERS_FIREBASE_ADMIN_KEY=${LETTERS_FIREBASE_ADMIN_KEY} -d",
-        "dev": "NODE_ENV=development npm-run-all -p api client:dev server:dev styles:w",
+        "dev": "SET NODE_ENV=development&&npm-run-all -p api client:dev server:dev styles:w",
         "server:dev": "nodemon --config nodemon.json index.js",
         "start": "NODE_ENV=production pm2 start ./index.js --no-daemon",
         "styles:w": "npm run styles && node-sass src/styles/styles.scss -o static/ -w src/styles --watch --recursive",

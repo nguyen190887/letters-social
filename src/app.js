@@ -11,6 +11,7 @@ import * as API from './shared/http';
 import Ad from './components/ad/Ad';
 import Post from './components/post/Post';
 import Welcome from './components/welcome/Welcome';
+import CreatePost from './components/post/Create';
 
 /**
  * The app component serves as a root for the project and renders either children,
@@ -29,6 +30,7 @@ class App extends Component {
                 .ENDPOINT}/posts?_page=1&_sort=date&_order=DESC&_embed=comments&_expand=user&_embed=likes`,
         };
         this.getPosts = this.getPosts.bind(this);
+        this.createNewPost = this.createNewPost.bind(this);
     }
     static propTypes = {
         children: PropTypes.node,
@@ -58,6 +60,13 @@ class App extends Component {
                 this.setState(() => ({ error: err }));
             });
     }
+    createNewPost(newPost) {
+        this.setState(prevState => {
+            return {
+                posts: orderBy(prevState.posts.concat(newPost), 'date', 'desc')
+            };
+        })
+    }
     render() {
         if (this.state.error) {
             return (
@@ -76,6 +85,7 @@ class App extends Component {
                 ) : (
                     <div className="home">
                         <Welcome key="welcome" />
+                        <CreatePost onSubmit={this.createNewPost} />
                         <div>
                             {this.state.posts.length && (
                                 <div className="posts">
