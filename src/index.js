@@ -4,6 +4,7 @@ import { render } from 'react-dom';
 import App from './app';
 import Home from './pages/Home';
 import SinglePost from './pages/Post';
+import NotFound from './pages/NotFound';
 import Router from './components/router/Router';
 import Route from './components/router/Route';
 import { history } from './history';
@@ -21,6 +22,7 @@ export const renderApp = (state, callback = () => {}) => {
             <Route path="" component={App}>
                 <Route path="/" component={Home} />
                 <Route path="/posts/:postId" component={SinglePost} />
+                <Route path="*" component={NotFound} />
             </Route>
         </Router>,
         document.getElementById('app'),

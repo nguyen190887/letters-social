@@ -15,8 +15,10 @@ export class SinglePost extends Component {
             <div className="sinple-post">
                 <RouterLink to="/">
                     <div className="back">
-                        <i className="fa fa-arrow-circle-left"></i>
-                        Back to home
+                        <button>
+                            <i className="fa fa-arrow-circle-left"></i>
+                            Back to home
+                        </button>
                     </div>
                 </RouterLink>
                 <Post id={this.props.params.postId} />
