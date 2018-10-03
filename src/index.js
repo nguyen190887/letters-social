@@ -2,7 +2,8 @@ import React from 'react';
 import { render } from 'react-dom';
 
 import App from './app';
-import Home from './components/pages/Home';
+import Home from './pages/Home';
+import SinglePost from './pages/Post';
 import Router from './components/router/Router';
 import Route from './components/router/Route';
 import { history } from './history';
@@ -19,6 +20,7 @@ export const renderApp = (state, callback = () => {}) => {
         <Router {...state}>
             <Route path="" component={App}>
                 <Route path="/" component={Home} />
+                <Route path="/posts/:postId" component={SinglePost} />
             </Route>
         </Router>,
         document.getElementById('app'),

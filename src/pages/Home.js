@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
-import * as API from '../../shared/http';
+import * as API from '../shared/http';
 import parseLinkHeader from 'parse-link-header';
 import orderBy from 'lodash/orderBy';
 
-import Ad from '../../components/ad/Ad';
-import CreatePost from '../../components/post/Create';
-import Post from '../../components/post/Post';
-import Welcome from '../../components/welcome/Welcome';
+import Ad from '../components/ad/Ad';
+import CreatePost from '../components/post/Create';
+import Post from '../components/post/Post';
+import Welcome from '../components/welcome/Welcome';
 
 class Home extends Component {
     constructor(props) {
