@@ -2,7 +2,7 @@ import React from 'react';
 import {shalow} from 'enzyme';
 import renderer from 'react-test-renderer';
 
-import {Content} from './Content';
+import Content from './Content';
 import { wrap } from 'rest';
 
 describe('<Content/>', () => {
