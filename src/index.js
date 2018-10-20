@@ -13,6 +13,9 @@ import Login from './pages/login';
 import NotFound from './pages/404';
 import { getFirebaseToken } from './backend/auth';
 
+import configureStore from './store/configureStore';
+import './store/exampleUse';
+
 import './shared/crash';
 import './shared/service-worker';
 import './shared/vendor';
