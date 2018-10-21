@@ -1,5 +1,9 @@
 {
     "env": {
+        "test": {
+            "presets": ["react-app", "env"],
+            "plugins": ["transform-class-properties"]
+        },
         "development": {
             "presets": ["react-app", "env"],
             "plugins": ["transform-class-properties"]
